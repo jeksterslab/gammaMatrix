@@ -1,0 +1,41 @@
+---
+title: "gammaMatrix: Asymptotic Covariance Matrix of Covariances"
+author: "Ivan Jacob Agaloos Pesigan"
+date: "`r Sys.Date()`"
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/jeksterslab/gammaMatrix/workflows/R-CMD-check/badge.svg)](https://github.com/jeksterslab/gammaMatrix/actions)
+<!-- badges: end -->
+
+## Description
+
+A collection of functions
+for generating the asymptotic covariance matrix
+of covariances.
+
+## Installation
+
+You can install the released version of `gammaMatrix` from [GitHub](https://github.com/jeksterslab/gammaMatrix) with:
+
+```r
+install.packages("remotes")
+remotes::install_github("jeksterslab/gammaMatrix")
+```
+
+## More Information
+
+See [GitHub Pages](https://jeksterslab.github.io/gammaMatrix/index.html)
+for package documentation.

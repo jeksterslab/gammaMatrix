@@ -1,0 +1,21 @@
+---
+title: "gammaMatrix: Asymptotic Covariance Matrix of Covariances"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{gammaMatrix: Asymptotic Covariance Matrix of Covariances}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Description
+
+A collection of functions
+for generating the asymptotic covariance matrix
+of covariances.

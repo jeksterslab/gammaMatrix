@@ -1,0 +1,31 @@
+---
+title: "gammaMatrix: Session"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{gammaMatrix: Session}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(gammaMatrix)
+```
+
+# Session
+
+```{r}
+sessionInfo()
+```
+
+# Packages
+
+```{r}
+unname(installed.packages()[, 1])
+```

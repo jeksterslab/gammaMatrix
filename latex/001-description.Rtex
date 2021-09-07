@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage[sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\addbibresource{.references/bib.bib}
+
+\title{gammaMatrix: Asymptotic Covariance Matrix of Covariances}
+\author{Ivan Jacob Agaloos Pesigan}
+
+\begin{document}
+
+\maketitle
+
+<<echo=FALSE>>=
+root <- rprojroot::is_rstudio_project
+source(
+  root$find_file(
+    "latex",
+    "R_scripts",
+    "start.R"
+  )
+)
+@
+
+\section{Description}
+
+A collection of functions
+for generating the asymptotic covariance matrix
+$\boldsymbol{\Gamma}$
+of covariances.
+
+\section{Details}
+
+\subsection{General Formula}
+
+\input{latex/equations/gammacap-gen}
+
+\subsection{Normally Distributed Data}
+
+\input{latex/equations/gammacap-mvn}
+
+\subsection{Asymptotic Distribution-Free}
+
+\input{latex/equations/gammacap-adf}
+
+\subsection{Nonparametric Bootstrapped Asymptotic Distribution-Free}
+
+\input{latex/equations/gammacap-adfnb}
+
+\printbibliography
+
+\end{document}

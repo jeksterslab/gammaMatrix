@@ -1,0 +1,60 @@
+\begin{equation}
+    \label{eq:gammacap-adf}
+    \tilde{\boldsymbol{\Gamma}}_{\mathrm{ADF}}
+    =
+    \tilde{\sigma}_{ijkl}
+    -
+    \tilde{\sigma}_{ij}
+    \tilde{\sigma}_{kl}
+\end{equation}
+
+\begin{equation}
+    \label{eq:adfunbiased}
+    \hat{\boldsymbol{\Gamma}}_{\mathrm{ADF}}
+    =
+    \frac{
+      n
+      \left( n - 1 \right)
+    }{
+      \left( n - 2 \right)
+      \left( n - 3 \right)
+    }
+    \left( 
+      \tilde{\sigma}_{ijkl}
+      -
+      \tilde{\sigma}_{ij}
+      \tilde{\sigma}_{kl}    
+    \right)
+    -
+    \frac{
+      n
+    }{
+      \left( n - 2 \right)
+      \left( n - 3 \right)
+    }
+    \left(
+      \tilde{\sigma}_{ik}
+      \tilde{\sigma}_{jl}  
+      +
+      \tilde{\sigma}_{il}
+      \tilde{\sigma}_{jk}
+      -
+      \frac{
+        2
+        \tilde{\sigma}_{ij}
+        \tilde{\sigma}_{kl}  
+      }{
+        \left( n - 1 \right)
+      }
+    \right)
+\end{equation}
+
+\noindent where
+$\tilde{\sigma}_{ik}$
+and
+$\tilde{\sigma}_{jl}$ 
+are consistent
+maximum likelihood estimates of the covariance
+and $\tilde{\sigma}_{ijkl}$ is the fourth order moment about the mean\footnote{
+  See equations 3.4 and 3.8 on pages 71-72 of \Textcite{Browne-1984}.
+}.

@@ -1,0 +1,144 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Simulated Data}
+\author{Ivan Jacob Agaloos Pesigan}
+
+\begin{document}
+
+\maketitle
+
+<<echo=FALSE>>=
+root <- rprojroot::is_rstudio_project
+source(
+  root$find_file(
+    "latex",
+    "R_scripts",
+    "start.R"
+  )
+)
+@
+
+<<>>=
+set.seed(42)
+n_i <- 1000
+mu_i <- c(0, 0)
+k_i <- length(mu_i)
+sigmacap_i <- matrix(
+  data = c(
+    1.0,
+    0.5,
+    0.5,
+    1
+  ),
+  nrow = k_i,
+  ncol = k_i
+)
+diag(sigmacap_i) <- 1
+x_i <- matrix(
+  data = rnorm(
+    n = n_i * k_i
+  ),
+  nrow = n_i,
+  ncol = k_i
+) %*% (
+  chol(sigmacap_i)
+) + (
+  matrix(
+    data = 1,
+    nrow = n_i,
+    ncol = 1
+  ) %*% mu_i
+)
+@
+
+\section{General Formula}
+
+<<>>=
+gammacap_gen(x_i)
+gammacap(
+  x_i,
+  type = "gen"
+)
+@
+
+\section{Normally Distributed Data}
+
+<<>>=
+gammacap_mvn(x_i)
+gammacap(
+  x_i,
+  type = "mvn"
+)
+gammacap_mvn(sigmacap = cov(x_i))
+gammacap(
+  sigmacap = cov(x_i),
+  type = "mvn"
+)
+@
+
+\section{Asymptotic Distribution-Free}
+
+<<>>=
+gammacap_adf(
+  x_i,
+  unbiased = TRUE
+)
+gammacap(
+  x_i,
+  type = "adf",
+  unbiased = TRUE
+)
+gammacap_adf(
+  x_i,
+  unbiased = FALSE
+)
+gammacap(
+  x_i,
+  type = "adf",
+  unbiased = FALSE
+)
+@
+
+<<>>=
+seed_i <- 42
+bcap_i <- 5000L
+gammacap_adfnb(
+  x_i,
+  bcap = bcap_i,
+  seed = seed_i
+)
+gammacap(
+  x_i,
+  type = "adfnb",
+  bcap = bcap_i,
+  seed = seed_i
+)
+@
+
+\section{OLS}
+
+<<>>=
+x_i <- as.data.frame(x_i)
+colnames(x_i) <- c("y", "x")
+obj_i <- lm(
+  y ~ x,
+  data = x_i
+)
+gammacap_ols(obj_i)
+@
+
+<<echo = FALSE>>=
+rm(
+  n_i,
+  mu_i,
+  k_i,
+  sigmacap_i,
+  x_i,
+  seed_i,
+  bcap_i,
+  obj_i
+)
+@
+
+\end{document}

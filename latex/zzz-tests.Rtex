@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{gammaMatrix: Tests}
+\author{Ivan Jacob Agaloos Pesigan}
+
+\begin{document}
+
+\maketitle
+
+<<echo=FALSE>>=
+root <- rprojroot::is_rstudio_project
+source(
+  root$find_file(
+    "latex",
+    "R_scripts",
+    "tests.R"
+  )
+)
+@
+
+\section{Environment}
+
+<<>>=
+ls()
+@
+
+\section{Class}
+
+<<>>=
+obj_i <- lapply(
+  X = ls(),
+  FUN = function(x) eval(parse(text = x))
+)
+lapply(
+  X = obj_i,
+  FUN = class
+)
+@
+
+\end{document}

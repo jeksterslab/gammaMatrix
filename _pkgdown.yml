@@ -1,0 +1,16 @@
+destination: docs
+url: https://github.com/jeksterslab/gammaMatrix/
+
+reference:
+- title: Package
+  contents:
+  - has_keyword("package")
+- title: Gamma Matrix Functions
+  contents:
+  - has_concept("Gamma Matrix Functions")
+- title: Multivariate Normal Distribution Functions
+  contents:
+  - has_concept("Multivariate Normal Distribution Functions")
+- title: Linear Algebra Functions
+  contents:
+  - has_concept("Linear Algebra Functions")
