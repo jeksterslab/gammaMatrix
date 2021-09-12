@@ -100,7 +100,7 @@ gammacap(
 )
 @
 
-\section{Nonparametric Bootstrapped Covariances}
+\section{Nonparametric Bootstrapped Covariance Matrix}
 
 <<>>=
 seed_i <- 42

@@ -1,4 +1,4 @@
-#' Nonparametric Bootstrapped Asymptotic Distribution-Free Covariance Matrix
+#' Nonparametric Bootstrapped Covariance Matrix
 #'
 #' Calculates the nonparametric bootstrapped
 #' asymptotic distribution-free (ADF)

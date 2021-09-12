@@ -2,7 +2,7 @@
 % Please edit documentation in R/gammaMatrix-gammacap_nb.R
 \name{gammacap_nb}
 \alias{gammacap_nb}
-\title{Nonparametric Bootstrapped Asymptotic Distribution-Free Covariance Matrix}
+\title{Nonparametric Bootstrapped Covariance Matrix}
 \usage{
 gammacap_nb(x, bcap = 5000L, seed = NULL, names = TRUE, sep = ".")
 }
