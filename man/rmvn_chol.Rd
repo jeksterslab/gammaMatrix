@@ -40,7 +40,7 @@ from the Multivariate Normal Distribution
 Using the Cholesky Decomposition
 }
 \examples{
-mu <- c(100, 100)
+mu <- c(0, 0)
 sigmacap <- matrix(
   data = c(
     1, 0.5, 0.5, 1
@@ -48,14 +48,11 @@ sigmacap <- matrix(
   nrow = 2
 )
 
-x <- rmvn_chol(
-  n = 100,
+rmvn_chol(
+  n = 5,
   mu = mu,
   sigmacap = sigmacap
 )
-
-colMeans(x)
-cov(x)
 }
 \author{
 Ivan Jacob Agaloos Pesigan

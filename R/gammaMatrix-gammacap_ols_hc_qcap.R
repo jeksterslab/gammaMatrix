@@ -43,8 +43,7 @@
 #'     nrow = k, ncol = k
 #'   )
 #' )
-#' m <- matrix(data = 1, nrow = n, ncol = 1) %*% c(0, 0)
-#' x <- as.data.frame(z %*% q + m)
+#' x <- as.data.frame(z %*% q)
 #' colnames(x) <- c("y", "x")
 #' obj <- lm(y ~ x, data = x)
 #' h <- hatvalues(obj)

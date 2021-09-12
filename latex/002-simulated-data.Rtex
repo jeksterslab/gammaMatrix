@@ -21,7 +21,7 @@ source(
 
 <<>>=
 set.seed(42)
-n_i <- 1000
+n_i <- 100
 mu_i <- c(0, 0)
 k_i <- length(mu_i)
 sigmacap_i <- matrix(
@@ -100,6 +100,26 @@ gammacap(
 )
 @
 
+\section{Nonparametric Bootstrapped Covariances}
+
+<<>>=
+seed_i <- 42
+bcap_i <- 5000L
+gammacap_nb(
+  x_i,
+  bcap = bcap_i,
+  seed = seed_i
+)
+gammacap(
+  x_i,
+  type = "nb",
+  bcap = bcap_i,
+  seed = seed_i
+)
+@
+
+\section{Nonparametric Bootstrapped Asymptotic Distribution-Free}
+
 <<>>=
 seed_i <- 42
 bcap_i <- 5000L
@@ -126,6 +146,18 @@ obj_i <- lm(
   data = x_i
 )
 gammacap_ols(obj_i)
+@
+
+\section{OLS-HC}
+
+<<>>=
+x_i <- as.data.frame(x_i)
+colnames(x_i) <- c("y", "x")
+obj_i <- lm(
+  y ~ x,
+  data = x_i
+)
+gammacap_ols_hc(obj_i)
 @
 
 <<echo = FALSE>>=

@@ -17,6 +17,10 @@
 #'   calculate covariance matrix using the general formula.
 #'   If `type = "mvn"`,
 #'   calculate covariance matrix with multivariate normal data.
+#'   If `type = "nb"`,
+#'   calculate covariance matrix from
+#'   nonparametric bootstrapped
+#'   covariances.
 #' @param sigmacap Numeric matrix.
 #'   The argument is used when `type = "mvn"`.
 #'   Optional argument.
@@ -28,10 +32,10 @@
 #'   If `unbiased = FALSE`,
 #'   returns consistent asymptotic distribution-free covariance matrix.
 #' @param bcap Integer.
-#'   The argument is used when `type = "adfnb"`.
+#'   The argument is used when `type = "adfnb" or type = "nb"`.
 #'   Number of bootstrap samples.
 #' @param seed Integer.
-#'   The argument is used when `type = "adfnb"`.
+#'   The argument is used when `type = "adfnb" or type = "nb"`.
 #'   Random number generation seed.
 #' @inheritParams vech
 #'
@@ -40,23 +44,23 @@
 #' @examples
 #' set.seed(42)
 #' n <- 1000
-#' mu <- c(0, 0)
-#' k <- length(mu)
-#' sigmacap <- matrix(
-#'   data = c(1.0, 0.5, 0.5, 1.0),
-#'   nrow = k, ncol = k
+#' k <- 2
+#' q <- chol(
+#'   matrix(
+#'     data = c(1.0, 0.5, 0.5, 1.0),
+#'     nrow = k, ncol = k
+#'   )
 #' )
 #' z <- matrix(
 #'   data = rnorm(n = n * k), nrow = n, ncol = k
 #' )
-#' q <- chol(sigmacap)
-#' m <- matrix(data = 1, nrow = n, ncol = 1) %*% mu
-#' x <- z %*% q + m
+#' x <- z %*% q
 #'
 #' gammacap(x, type = "adf")
 #' gammacap(x, type = "adfnb")
 #' gammacap(x, type = "gen")
 #' gammacap(x, type = "mvn")
+#' gammacap(x, type = "nb")
 #' gammacap(sigmacap = cov(x), type = "mvn")
 #' @export
 #' @family Gamma Matrix Functions
@@ -104,6 +108,17 @@ gammacap <- function(x,
     adfnb = {
       return(
         gammacap_adfnb(
+          x = x,
+          bcap = bcap,
+          seed = seed,
+          names = names,
+          sep = sep
+        )
+      )
+    },
+    nb = {
+      return(
+        gammacap_nb(
           x = x,
           bcap = bcap,
           seed = seed,

@@ -184,6 +184,7 @@ Handbook of statistical modeling forthe social and behavioral sciences.</p>
 <code><a href='gammacap_adfnb.html'>gammacap_adfnb</a>()</code>,
 <code><a href='gammacap_adf.html'>gammacap_adf</a>()</code>,
 <code><a href='gammacap_gen.html'>gammacap_gen</a>()</code>,
+<code><a href='gammacap_nb.html'>gammacap_nb</a>()</code>,
 <code><a href='gammacap_ols_generic.html'>gammacap_ols_generic</a>()</code>,
 <code><a href='gammacap_ols_hc_generic.html'>gammacap_ols_hc_generic</a>()</code>,
 <code><a href='gammacap_ols_hc_qcap_generic.html'>gammacap_ols_hc_qcap_generic</a>()</code>,
@@ -209,8 +210,7 @@ Handbook of statistical modeling forthe social and behavioral sciences.</p>
     nrow <span class='op'>=</span> <span class='va'>k</span>, ncol <span class='op'>=</span> <span class='va'>k</span>
   <span class='op'>)</span>
 <span class='op'>)</span>
-<span class='va'>m</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='fl'>1</span>, nrow <span class='op'>=</span> <span class='va'>n</span>, ncol <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'>%*%</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>
-<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='va'>z</span> <span class='op'>%*%</span> <span class='va'>q</span> <span class='op'>+</span> <span class='va'>m</span>
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='va'>z</span> <span class='op'>%*%</span> <span class='va'>q</span>
 
 <span class='fu'>gammacap_mvn</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;           v1.v1    v1.v2     v2.v2

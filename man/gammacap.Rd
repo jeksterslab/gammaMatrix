@@ -27,7 +27,11 @@ asymptotic distribution-free covariance matrix.
 If \code{type = "gen"},
 calculate covariance matrix using the general formula.
 If \code{type = "mvn"},
-calculate covariance matrix with multivariate normal data.}
+calculate covariance matrix with multivariate normal data.
+If \code{type = "nb"},
+calculate covariance matrix from
+nonparametric bootstrapped
+covariances.}
 
 \item{sigmacap}{Numeric matrix.
 The argument is used when \code{type = "mvn"}.
@@ -42,11 +46,11 @@ If \code{unbiased = FALSE},
 returns consistent asymptotic distribution-free covariance matrix.}
 
 \item{bcap}{Integer.
-The argument is used when \code{type = "adfnb"}.
+The argument is used when \verb{type = "adfnb" or type = "nb"}.
 Number of bootstrap samples.}
 
 \item{seed}{Integer.
-The argument is used when \code{type = "adfnb"}.
+The argument is used when \verb{type = "adfnb" or type = "nb"}.
 Random number generation seed.}
 
 \item{names}{Logical.
@@ -66,23 +70,23 @@ of a sample covariance matrix.
 \examples{
 set.seed(42)
 n <- 1000
-mu <- c(0, 0)
-k <- length(mu)
-sigmacap <- matrix(
-  data = c(1.0, 0.5, 0.5, 1.0),
-  nrow = k, ncol = k
+k <- 2
+q <- chol(
+  matrix(
+    data = c(1.0, 0.5, 0.5, 1.0),
+    nrow = k, ncol = k
+  )
 )
 z <- matrix(
   data = rnorm(n = n * k), nrow = n, ncol = k
 )
-q <- chol(sigmacap)
-m <- matrix(data = 1, nrow = n, ncol = 1) \%*\% mu
-x <- z \%*\% q + m
+x <- z \%*\% q
 
 gammacap(x, type = "adf")
 gammacap(x, type = "adfnb")
 gammacap(x, type = "gen")
 gammacap(x, type = "mvn")
+gammacap(x, type = "nb")
 gammacap(sigmacap = cov(x), type = "mvn")
 }
 \seealso{
@@ -91,6 +95,7 @@ Other Gamma Matrix Functions:
 \code{\link{gammacap_adf}()},
 \code{\link{gammacap_gen}()},
 \code{\link{gammacap_mvn}()},
+\code{\link{gammacap_nb}()},
 \code{\link{gammacap_ols_generic}()},
 \code{\link{gammacap_ols_hc_generic}()},
 \code{\link{gammacap_ols_hc_qcap_generic}()},

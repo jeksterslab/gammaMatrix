@@ -9,7 +9,7 @@ x_i <- matrix(
 )
 answer_i <- c(1.0, 0.5, 0.4, 1.0, 0.6, 1.0)
 result_i <- vech(x_i, names = FALSE)
-testthat::test_that("vech works", {
+testthat::test_that("linearAlgebra-vech 3 by 3", {
   testthat::expect_equal(
     result_i,
     answer_i
@@ -21,7 +21,7 @@ x_i <- matrix(
 )
 answer_i <- c("a", "b", "c")
 result_i <- vech(x_i, names = FALSE)
-testthat::test_that("vech works 2 by 2", {
+testthat::test_that("linearAlgebra-vech 2 by 2", {
   testthat::expect_equal(
     result_i,
     answer_i
@@ -64,7 +64,7 @@ x_i <- matrix(
 x_i <- cov(x_i)
 answer_i <- x_i[lower.tri(x_i, diag = TRUE)]
 result_i <- vech(x_i, names = FALSE)
-testthat::test_that("vech works random cov", {
+testthat::test_that("linearAlgebra-vech random cov", {
   testthat::expect_equal(
     result_i,
     answer_i

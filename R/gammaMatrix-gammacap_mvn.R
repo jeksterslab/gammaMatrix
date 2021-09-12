@@ -39,8 +39,7 @@
 #'     nrow = k, ncol = k
 #'   )
 #' )
-#' m <- matrix(data = 1, nrow = n, ncol = 1) %*% c(0, 0)
-#' x <- z %*% q + m
+#' x <- z %*% q
 #'
 #' gammacap_mvn(x)
 #' gammacap_mvn(sigmacap = cov(x))

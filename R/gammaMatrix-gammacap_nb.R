@@ -53,11 +53,11 @@
 #' @export
 #' @family Gamma Matrix Functions
 #' @keywords gammaMatrix
-gammacap_adfnb <- function(x,
-                           bcap = 5000L,
-                           seed = NULL,
-                           names = TRUE,
-                           sep = ".") {
+gammacap_nb <- function(x,
+                        bcap = 5000L,
+                        seed = NULL,
+                        names = TRUE,
+                        sep = ".") {
   stopifnot(
     is.data.frame(x) || is.matrix(x) || is.vector(x)
   )
@@ -96,26 +96,11 @@ gammacap_adfnb <- function(x,
     FUN = nb,
     x = x
   )
-  meanvechsigmacap <- colMeans(
-    do.call(
-      what = "rbind",
-      args = vechsigmacap
-    )
+  vechsigmacap <- do.call(
+    what = "rbind",
+    args = vechsigmacap
   )
-  vechsigmacap <- lapply(
-    X = vechsigmacap,
-    FUN = function(x) {
-      tcrossprod(
-        x - meanvechsigmacap
-      )
-    }
-  )
-  output <- n * Reduce(
-    f = "+",
-    x = vechsigmacap
-  ) / (
-    bcap - 1
-  )
+  output <- stats::var(vechsigmacap) * n
   if (names) {
     colnames(output) <- rownames(output) <- gammacapnames(x, sep = sep)
   }

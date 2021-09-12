@@ -25,7 +25,7 @@
 #' @returns A matrix (`data_frame = FALSE`) or data.frame (`data_frame = TRUE`).
 #'
 #' @examples
-#' mu <- c(100, 100)
+#' mu <- c(0, 0)
 #' sigmacap <- matrix(
 #'   data = c(
 #'     1, 0.5, 0.5, 1
@@ -33,14 +33,11 @@
 #'   nrow = 2
 #' )
 #'
-#' x <- rmvn_chol(
-#'   n = 100,
+#' rmvn_chol(
+#'   n = 5,
 #'   mu = mu,
 #'   sigmacap = sigmacap
 #' )
-#'
-#' colMeans(x)
-#' cov(x)
 #' @export
 #' @family Multivariate Normal Distribution Functions
 #' @keywords multiNorm

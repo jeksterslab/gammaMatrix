@@ -105,8 +105,7 @@ q <- chol(
     nrow = k, ncol = k
   )
 )
-m <- matrix(data = 1, nrow = n, ncol = 1) \%*\% c(0, 0)
-x <- as.data.frame(z \%*\% q + m)
+x <- as.data.frame(z \%*\% q)
 colnames(x) <- c("y", "x")
 obj <- lm(y ~ x, data = x)
 beta <- coef(obj)[-1]
@@ -135,6 +134,7 @@ Other Gamma Matrix Functions:
 \code{\link{gammacap_adf}()},
 \code{\link{gammacap_gen}()},
 \code{\link{gammacap_mvn}()},
+\code{\link{gammacap_nb}()},
 \code{\link{gammacap_ols_hc_generic}()},
 \code{\link{gammacap_ols_hc_qcap_generic}()},
 \code{\link{gammacap_ols_hc_qcap}()},

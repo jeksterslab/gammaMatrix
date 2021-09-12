@@ -43,8 +43,7 @@ q <- chol(
     nrow = k, ncol = k
   )
 )
-m <- matrix(data = 1, nrow = n, ncol = 1) \%*\% c(0, 0)
-x <- z \%*\% q + m
+x <- z \%*\% q
 
 gammacap_gen(x)
 }
@@ -61,6 +60,7 @@ Other Gamma Matrix Functions:
 \code{\link{gammacap_adfnb}()},
 \code{\link{gammacap_adf}()},
 \code{\link{gammacap_mvn}()},
+\code{\link{gammacap_nb}()},
 \code{\link{gammacap_ols_generic}()},
 \code{\link{gammacap_ols_hc_generic}()},
 \code{\link{gammacap_ols_hc_qcap_generic}()},

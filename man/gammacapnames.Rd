@@ -30,6 +30,7 @@ Other Gamma Matrix Functions:
 \code{\link{gammacap_adf}()},
 \code{\link{gammacap_gen}()},
 \code{\link{gammacap_mvn}()},
+\code{\link{gammacap_nb}()},
 \code{\link{gammacap_ols_generic}()},
 \code{\link{gammacap_ols_hc_generic}()},
 \code{\link{gammacap_ols_hc_qcap_generic}()},

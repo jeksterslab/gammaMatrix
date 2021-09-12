@@ -9,7 +9,7 @@ answer_i <- matrix(
   ncol = 3
 )
 result_i <- sym_of_vech(x_i)
-testthat::test_that("sym_of_vech works", {
+testthat::test_that("linearAlgebra-sym_of_vech 3 by 3", {
   testthat::expect_equal(
     result_i,
     answer_i
@@ -21,7 +21,7 @@ answer_i <- matrix(
   ncol = 2
 )
 result_i <- sym_of_vech(x_i)
-testthat::test_that("sym_of_vech works 2 by 2", {
+testthat::test_that("linearAlgebra-sym_of_vech 2 by 2", {
   testthat::expect_equal(
     result_i,
     answer_i
@@ -33,7 +33,7 @@ answer_i <- matrix(
   ncol = 1
 )
 result_i <- sym_of_vech(x_i)
-testthat::test_that("sym_of_vech works 1 by 1", {
+testthat::test_that("linearAlgebra-sym_of_vech 1 by 1", {
   testthat::expect_equal(
     result_i,
     answer_i
@@ -75,19 +75,19 @@ x_i <- matrix(
 )
 answer_i <- cov(x_i)
 result_i <- sym_of_vech(answer_i[lower.tri(answer_i, diag = TRUE)])
-testthat::test_that("sym_of_vech works random cov", {
+testthat::test_that("linearAlgebra-sym_of_vech random cov", {
   testthat::expect_equal(
     result_i,
     answer_i
   )
 })
 # expect_error
-testthat::test_that("sym_of_vech error", {
+testthat::test_that("linearAlgebra-sym_of_vech error", {
   testthat::expect_error(
     sym_of_vech(as.matrix(1:5))
   )
 })
-testthat::test_that("sym_of_vech error", {
+testthat::test_that("linearAlgebra-sym_of_vech error", {
   testthat::expect_error(
     sym_of_vech(rnorm(n = 4))
   )

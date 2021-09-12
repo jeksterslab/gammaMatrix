@@ -49,6 +49,20 @@ of covariances.
 
 \input{latex/equations/gammacap-adf}
 
+\subsection{Nonparametric Bootstrap Covariances}
+
+This approach follow the following steps.
+
+\begin{enumerate}
+    \item Obtain a random sample of size $n$ from the original data set with replacement.
+    \item Calculate the sample covariance matrix $\hat{\boldsymbol{\Sigma}}$ from the sample obtained from step 1.
+    \item Extract the half-vectorization $\mathrm{vech} \left( \hat{\boldsymbol{\Sigma}} \right)$ of the covariance matrix obtained in step 2.
+    \item Repeat steps 1, 2, and 3, $B$ number of times (e.g., $B = 1,000$).
+    \item Calculate the covariance matrix of the $B$ estimates obtained from step 4.
+    \item The matrix obtained from step 5 is the $\frac{\boldsymbol{\Gamma}}{n}$ matrix.
+          Multiply the result of step 5 by $n$ to get the $\boldsymbol{\Gamma}$ matrix.
+\end{enumerate}
+
 \subsection{Nonparametric Bootstrapped Asymptotic Distribution-Free}
 
 \input{latex/equations/gammacap-adfnb}
