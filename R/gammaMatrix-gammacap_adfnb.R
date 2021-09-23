@@ -3,7 +3,7 @@
 #' Calculates the nonparametric bootstrapped
 #' asymptotic distribution-free (ADF)
 #' covariance matrix of the unique elements
-#' of a sample covariance matrix.
+#' of the covariance matrix.
 #'
 #' @details
 #' # Dependencies

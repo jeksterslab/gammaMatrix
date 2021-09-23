@@ -1,7 +1,7 @@
 #' Asymptotic Covariance Matrix (General)
 #'
 #' Calculates the asymptotic covariance matrix of the unique elements
-#' of a sample covariance matrix.
+#' of the covariance matrix.
 #'
 #' @details
 #' # Dependencies

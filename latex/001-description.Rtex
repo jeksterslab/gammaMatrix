@@ -1,11 +1,10 @@
 \documentclass{article}
-\usepackage[utf8]{inputenc}
+
+\input{latex/preamble/preamble}
+
 \usepackage{hyperref}
 
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
+
 
 \usepackage[sortcites=true,sorting=nyt,backend=biber]{biblatex}
 \addbibresource{.references/bib.bib}
@@ -37,17 +36,47 @@ of covariances.
 
 \section{Details}
 
-\subsection{General Formula}
+\subsection{General}
 
-\input{latex/equations/gammacap-gen}
+\input{latex/equations/gammaMatrix-gammacap-gen}
+
+\input{latex/equations/gammaMatrix-gammacap-gen-where}
+
+The estimator is given by
+
+\input{latex/equations/gammaMatrix-gammacap-gen-estimator}
+
+\input{latex/equations/gammaMatrix-gammacap-gen-estimator-where}
 
 \subsection{Normally Distributed Data}
 
-\input{latex/equations/gammacap-mvn}
+\input{latex/equations/gammaMatrix-gammacap-mvn}
+
+\input{latex/equations/gammaMatrix-gammacap-mvn-where}
+
+The estimator is given by
+
+\input{latex/equations/gammaMatrix-gammacap-mvn-estimator}
+
+\input{latex/equations/gammaMatrix-gammacap-mvn-estimator-where}
 
 \subsection{Asymptotic Distribution-Free}
 
-\input{latex/equations/gammacap-adf}
+\input{latex/equations/gammaMatrix-gammacap-adf}
+
+\input{latex/equations/gammaMatrix-gammacap-adf-where}
+
+The consistent estimator is given by
+
+\input{latex/equations/gammaMatrix-gammacap-adf-consistent}
+
+\input{latex/equations/gammaMatrix-gammacap-adf-consistent-where}
+
+The unbiased estimator is given by
+
+\input{latex/equations/gammaMatrix-gammacap-adf-unbiased}
+
+\input{latex/equations/gammaMatrix-gammacap-adf-unbiased-where}
 
 \subsection{Nonparametric Bootstrap Covariances}
 
@@ -60,12 +89,26 @@ This approach follow the following steps.
     \item Repeat steps 1, 2, and 3, $B$ number of times (e.g., $B = 1,000$).
     \item Calculate the covariance matrix of the $B$ estimates obtained from step 4.
     \item The matrix obtained from step 5 is the $\frac{\boldsymbol{\Gamma}}{n}$ matrix.
-          Multiply the result of step 5 by $n$ to get the $\boldsymbol{\Gamma}$ matrix.
+          Multiply the result of step 5 by $n$ to get the $\hat{\boldsymbol{\Gamma}}$ matrix.
 \end{enumerate}
 
 \subsection{Nonparametric Bootstrapped Asymptotic Distribution-Free}
 
-\input{latex/equations/gammacap-adfnb}
+\input{latex/equations/gammaMatrix-gammacap-adfnb}
+
+\input{latex/equations/gammaMatrix-gammacap-adfnb-where}
+
+\subsection{Multivariate Normal with Adjustments for Nonnormality}
+
+\input{latex/equations/gammaMatrix-gammacap_mvn_adj}
+
+\input{latex/equations/gammaMatrix-gammacap_mvn_adj-where}
+
+The estimator is given by
+
+\input{latex/equations/gammaMatrix-gammacap_mvn_adj-estimator}
+
+\input{latex/equations/gammaMatrix-gammacap_mvn_adj-estimator-where}
 
 \printbibliography
 

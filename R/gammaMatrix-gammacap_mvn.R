@@ -1,7 +1,7 @@
 #' Asymptotic Covariance Matrix Assuming Multivariate Normal Data
 #'
 #' Calculates the covariance matrix of the unique elements
-#' of a sample covariance matrix assuming
+#' of the covariance matrix assuming
 #' multivariate normal data.
 #'
 #' @details

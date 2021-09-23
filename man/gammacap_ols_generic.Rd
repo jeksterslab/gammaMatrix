@@ -82,7 +82,7 @@ A matrix.
 }
 \description{
 Calculates the asymptotic covariance matrix of the unique elements
-of a sample covariance matrix using ordinary least squares estimates.
+of the covariance matrix using ordinary least squares estimates.
 }
 \section{Dependencies}{
 \itemize{
@@ -133,6 +133,7 @@ Other Gamma Matrix Functions:
 \code{\link{gammacap_adfnb}()},
 \code{\link{gammacap_adf}()},
 \code{\link{gammacap_gen}()},
+\code{\link{gammacap_mvnadj}()},
 \code{\link{gammacap_mvn}()},
 \code{\link{gammacap_nb}()},
 \code{\link{gammacap_ols_hc_generic}()},

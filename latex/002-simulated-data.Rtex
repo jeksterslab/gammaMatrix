@@ -66,6 +66,7 @@ gammacap(
 
 <<>>=
 gammacap_mvn(x_i)
+
 gammacap(
   x_i,
   type = "mvn"
@@ -74,6 +75,16 @@ gammacap_mvn(sigmacap = cov(x_i))
 gammacap(
   sigmacap = cov(x_i),
   type = "mvn"
+)
+@
+
+\section{Normally Distributed Data with Adjustment for Nonnormality}
+
+<<>>=
+gammacap_mvnadj(x_i)
+gammacap(
+  x_i,
+  type = "mvnadj"
 )
 @
 

@@ -2,7 +2,7 @@
 #'
 #' Calculates the
 #' covariance matrix of the unique elements
-#' of a sample covariance matrix.
+#' of the covariance matrix.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -17,6 +17,8 @@
 #'   calculate covariance matrix using the general formula.
 #'   If `type = "mvn"`,
 #'   calculate covariance matrix with multivariate normal data.
+#'   If `type = "mvnadj"`,
+#'   calculate covariance matrix with adjustment.
 #'   If `type = "nb"`,
 #'   calculate covariance matrix from
 #'   nonparametric bootstrapped
@@ -90,6 +92,15 @@ gammacap <- function(x,
         gammacap_mvn(
           x = x,
           sigmacap = sigmacap,
+          names = names,
+          sep = sep
+        )
+      )
+    },
+    mvnadj = {
+      return(
+        gammacap_mvnadj(
+          x = x,
           names = names,
           sep = sep
         )

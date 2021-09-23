@@ -1,7 +1,7 @@
 #' Asymptotic Covariance Matrix for Ordinary Least Squares Regression - Generic
 #'
 #' Calculates the asymptotic covariance matrix of the unique elements
-#' of a sample covariance matrix using ordinary least squares estimates.
+#' of the covariance matrix using ordinary least squares estimates.
 #'
 #' @details
 #' # Dependencies

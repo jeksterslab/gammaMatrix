@@ -39,7 +39,7 @@ A matrix.
 \description{
 Calculates the asymptotic distribution-free (ADF)
 covariance matrix of the unique elements
-of a sample covariance matrix.
+of the covariance matrix.
 }
 \section{Dependencies}{
 \itemize{
@@ -77,6 +77,7 @@ doi:\href{https://doi.org/10.1111/j.2044-8317.1984.tb00789.x}{10.1111/j.2044-831
 Other Gamma Matrix Functions: 
 \code{\link{gammacap_adfnb}()},
 \code{\link{gammacap_gen}()},
+\code{\link{gammacap_mvnadj}()},
 \code{\link{gammacap_mvn}()},
 \code{\link{gammacap_nb}()},
 \code{\link{gammacap_ols_generic}()},

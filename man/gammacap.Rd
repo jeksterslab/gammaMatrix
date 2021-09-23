@@ -28,6 +28,8 @@ If \code{type = "gen"},
 calculate covariance matrix using the general formula.
 If \code{type = "mvn"},
 calculate covariance matrix with multivariate normal data.
+If \code{type = "mvnadj"},
+calculate covariance matrix with adjustment.
 If \code{type = "nb"},
 calculate covariance matrix from
 nonparametric bootstrapped
@@ -65,7 +67,7 @@ A matrix.
 \description{
 Calculates the
 covariance matrix of the unique elements
-of a sample covariance matrix.
+of the covariance matrix.
 }
 \examples{
 set.seed(42)
@@ -94,6 +96,7 @@ Other Gamma Matrix Functions:
 \code{\link{gammacap_adfnb}()},
 \code{\link{gammacap_adf}()},
 \code{\link{gammacap_gen}()},
+\code{\link{gammacap_mvnadj}()},
 \code{\link{gammacap_mvn}()},
 \code{\link{gammacap_nb}()},
 \code{\link{gammacap_ols_generic}()},
