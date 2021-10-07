@@ -9,7 +9,7 @@ x_i <- rmvn_chol(
   )
 )
 normal_i <- gammacap(x_i, type = "mvn")
-testthat::test_that("test gen", {
+testthat::test_that("test-gammaMatrix-gammacap_gen-multivariate", {
   testthat::expect_true(
     all(
       abs(normal_i - gammacap(x_i, type = "gen")) <= tol_i

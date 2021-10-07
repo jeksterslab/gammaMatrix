@@ -1,11 +1,11 @@
-## ---- test-gammaMatrix-gammacap_mvnadj-univariate
+## ---- test-gammaMatrix-gammacap_mvnadj1-univariate
 tol_i <- 0.5
 x_i <- as.vector(scale(rnorm(1000)))
 normal_i <- gammacap(x_i, type = "mvn")
-testthat::test_that("test univariate mvnadj", {
+testthat::test_that("test-gammaMatrix-gammacap_mvnadj1-univariate", {
   testthat::expect_true(
     all(
-      abs(normal_i - gammacap(x_i, type = "mvnadj")) <= tol_i
+      abs(normal_i - gammacap(x_i, type = "mvnadj1")) <= tol_i
     )
   )
 })

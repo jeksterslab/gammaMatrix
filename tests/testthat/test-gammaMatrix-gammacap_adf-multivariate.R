@@ -9,14 +9,14 @@ x_i <- rmvn_chol(
   )
 )
 normal_i <- gammacap(x_i, type = "mvn")
-testthat::test_that("test adf unbiased = TRUE", {
+testthat::test_that("test-gammaMatrix-gammacap_adf-multivariate unbiased = TRUE", {
   testthat::expect_true(
     all(
       abs(normal_i - gammacap(x_i, type = "adf", unbiased = TRUE)) <= tol_i
     )
   )
 })
-testthat::test_that("test adf unbiased = FALSE", {
+testthat::test_that("test-gammaMatrix-gammacap_adf-multivariate unbiased = FALSE", {
   testthat::expect_true(
     all(
       abs(normal_i - gammacap(x_i, type = "adf", unbiased = FALSE)) <= tol_i

@@ -1,4 +1,4 @@
-## ---- test-gammaMatrix-gammacap_mvnadj-multivariate
+## ---- test-gammaMatrix-gammacap_mvnadj1-multivariate
 tol_i <- 0.5
 x_i <- rmvn_chol(
   n = 1000,
@@ -9,10 +9,10 @@ x_i <- rmvn_chol(
   )
 )
 normal_i <- gammacap(x_i, type = "mvn")
-testthat::test_that("test mvnadj", {
+testthat::test_that("test-gammaMatrix-gammacap_mvnadj1-multivariate", {
   testthat::expect_true(
     all(
-      abs(normal_i - gammacap(x_i, type = "mvnadj")) <= tol_i
+      abs(normal_i - gammacap(x_i, type = "mvnadj1")) <= tol_i
     )
   )
 })

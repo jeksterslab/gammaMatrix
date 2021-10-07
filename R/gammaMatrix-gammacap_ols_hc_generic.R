@@ -55,6 +55,7 @@ gammacap_ols_hc_generic <- function(x,
     is.data.frame(x) || is.matrix(x)
   )
   x <- as.matrix(x)
+  x <- x[stats::complete.cases(x), ]
   d <- scale(
     x = x,
     center = TRUE,

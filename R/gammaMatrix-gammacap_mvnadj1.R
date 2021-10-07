@@ -1,4 +1,4 @@
-#' Asymptotic Covariance Matrix with Adjustment
+#' Asymptotic Covariance Matrix with Adjustment (Variant 1)
 #'
 #' Calculates the covariance matrix of the unique elements
 #' of the covariance matrix with adjustment for nonnormality.
@@ -12,12 +12,7 @@
 #' @inheritParams gammacap_gen
 #'
 #' @references
-#'   Yuan, K.-H., & Hayashi, K. (2006).
-#'   Standard errors in covariance structure models:
-#'   Asymptotics versus bootstrap.
-#'   British Journal of Mathematical and Statistical Psychology,
-#'   59, 397–417.
-#'   doi:[10.1348/000711005X85896](https://doi.org/10.1348/000711005X85896).
+#'   Add appropriate references here...
 #'
 #' @returns A matrix.
 #'
@@ -36,13 +31,13 @@
 #' )
 #' x <- z %*% q
 #'
-#' gammacap_mvnadj(x)
+#' gammacap_mvnadj1(x)
 #' @export
 #' @family Gamma Matrix Functions
 #' @keywords gammaMatrix
-gammacap_mvnadj <- function(x,
-                            names = TRUE,
-                            sep = ".") {
+gammacap_mvnadj1 <- function(x,
+                             names = TRUE,
+                             sep = ".") {
   mvn <- gammacap_mvn(
     x = x,
     sigmacap = NULL,
@@ -61,9 +56,7 @@ gammacap_mvnadj <- function(x,
     ) %*% mvn
   )
   if (names) {
-    varnames <- colnames(output)
+    colnames(output) <- rownames(output) <- colnames(gen)
   }
-  output <- sym_of_vech(vech(output))
-  colnames(output) <- rownames(output) <- varnames
   return(output)
 }

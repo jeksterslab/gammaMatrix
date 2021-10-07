@@ -4,13 +4,19 @@
 \alias{gammacapnames}
 \title{Dimension Names for the Gamma Matrix}
 \usage{
-gammacapnames(x, sep = ".")
+gammacapnames(x, sep = ".", mean_structure = FALSE)
 }
 \arguments{
 \item{x}{Matrix or data frame.}
 
 \item{sep}{Character string.
 Separator for variable names.}
+
+\item{mean_structure}{Logical.
+Add names for means.
+If \code{mean_structure = TRUE},
+the first \code{ncol(x)} elements
+will be names for the \code{ncol(x)} means.}
 }
 \value{
 A vector.
@@ -23,13 +29,15 @@ x <- matrix(c(1, 0.5, 0.5, 1), nrow = 2)
 colnames(x) <- rownames(x) <- c("var1", "var2")
 
 gammacapnames(x)
+gammacapnames(x, mean_structure = TRUE)
 }
 \seealso{
 Other Gamma Matrix Functions: 
 \code{\link{gammacap_adfnb}()},
 \code{\link{gammacap_adf}()},
 \code{\link{gammacap_gen}()},
-\code{\link{gammacap_mvnadj}()},
+\code{\link{gammacap_mvnadj1}()},
+\code{\link{gammacap_mvnadj2}()},
 \code{\link{gammacap_mvn}()},
 \code{\link{gammacap_nb}()},
 \code{\link{gammacap_ols_generic}()},

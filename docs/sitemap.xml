@@ -25,7 +25,10 @@
     <loc>https://github.com/jeksterslab/gammaMatrix//reference/gammacap_mvn.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/gammaMatrix//reference/gammacap_mvnadj.html</loc>
+    <loc>https://github.com/jeksterslab/gammaMatrix//reference/gammacap_mvnadj1.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/gammaMatrix//reference/gammacap_mvnadj2.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/gammaMatrix//reference/gammacap_nb.html</loc>
@@ -52,13 +55,37 @@
     <loc>https://github.com/jeksterslab/gammaMatrix//reference/gammacapnames.html</loc>
   </url>
   <url>
+    <loc>https://github.com/jeksterslab/gammaMatrix//reference/grad_l_mvn.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/gammaMatrix//reference/grad_l_mvn_generic.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/gammaMatrix//reference/hess_l_mvn.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/gammaMatrix//reference/hess_l_mvn_generic.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/jeksterslab/gammaMatrix//reference/kcap.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/gammaMatrix//reference/l_mvn.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/gammaMatrix//reference/l_mvn_generic.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/gammaMatrix//reference/negl_mvn.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/gammaMatrix//reference/rmvn_chol.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/gammaMatrix//reference/sym_of_vech.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/gammaMatrix//reference/theta_helper.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/gammaMatrix//reference/vech.html</loc>

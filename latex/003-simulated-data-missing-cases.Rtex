@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Simulated Data}
+\author{Ivan Jacob Agaloos Pesigan}
+
+\begin{document}
+
+\maketitle
+
+<<echo=FALSE>>=
+root <- rprojroot::is_rstudio_project
+source(
+  root$find_file(
+    "latex",
+    "R_scripts",
+    "start.R"
+  )
+)
+@
+
+<<>>=
+set.seed(42)
+n_i <- 100
+mu_i <- c(0, 0)
+k_i <- length(mu_i)
+sigmacap_i <- matrix(
+  data = c(
+    1.0,
+    0.5,
+    0.5,
+    1
+  ),
+  nrow = k_i,
+  ncol = k_i
+)
+diag(sigmacap_i) <- 1
+x_i <- matrix(
+  data = rnorm(
+    n = n_i * k_i
+  ),
+  nrow = n_i,
+  ncol = k_i
+) %*% (
+  chol(sigmacap_i)
+) + (
+  matrix(
+    data = 1,
+    nrow = n_i,
+    ncol = 1
+  ) %*% mu_i
+)
+@
+
+
+
+<<>>=
+gammacap_mvn(x_i)
+x_i[sample(dim(x_i)[1], size = 10), 1] <- NA
+x_i[sample(dim(x_i)[1], size = 10), 2] <- NA
+gammacap_mvnadj2(
+  x_i,
+  missing = TRUE,
+  ml_cov = TRUE,
+  drop_means = TRUE
+)
+gammacap_mvnadj2(
+  x_i,
+  missing = TRUE,
+  ml_cov = TRUE,
+  drop_means = FALSE
+)
+@
+
+<<>>=
+gammacap_mvnadj2(
+  x_i,
+  missing = FALSE,
+  ml_cov = TRUE,
+  drop_means = TRUE
+)
+gammacap_mvnadj2(
+  x_i,
+  missing = FALSE,
+  ml_cov = TRUE,
+  drop_means = FALSE
+)
+@
+
+<<echo = FALSE>>=
+rm(
+  n_i,
+  mu_i,
+  k_i,
+  sigmacap_i,
+  x_i,
+  seed_i,
+  bcap_i,
+  obj_i
+)
+@
+
+\end{document}

@@ -17,8 +17,10 @@
 #'   calculate covariance matrix using the general formula.
 #'   If `type = "mvn"`,
 #'   calculate covariance matrix with multivariate normal data.
-#'   If `type = "mvnadj"`,
-#'   calculate covariance matrix with adjustment.
+#'   If `type = "mvnadj1"`,
+#'   calculate covariance matrix with adjustment variant 1.
+#'   If `type = "mvnadj2"`,
+#'   calculate covariance matrix with adjustment variant 2.
 #'   If `type = "nb"`,
 #'   calculate covariance matrix from
 #'   nonparametric bootstrapped
@@ -36,6 +38,19 @@
 #' @param bcap Integer.
 #'   The argument is used when `type = "adfnb" or type = "nb"`.
 #'   Number of bootstrap samples.
+#' @param missing Logical.
+#'   The argument is used when `type = "mvnadj2"`.
+#'   If `missing = TRUE`,
+#'   the mean vector and the covariance matrix
+#'   will be estimated using the EM algorithm.
+#'   If `missing = FALSE`,
+#'   all missing values will be dropped
+#'   and the mean vector and covariance matrix
+#'   will be estimated using `x`.
+#' @param ml_cov Logical.
+#'   The argument is used when `type = "mvnadj2"`.
+#'   If `missing = FALSE` and `ml_cov = TRUE`,
+#'   use maximum likelihood estimator of the covariance matrix.
 #' @param seed Integer.
 #'   The argument is used when `type = "adfnb" or type = "nb"`.
 #'   Random number generation seed.
@@ -62,6 +77,8 @@
 #' gammacap(x, type = "adfnb")
 #' gammacap(x, type = "gen")
 #' gammacap(x, type = "mvn")
+#' gammacap(x, type = "mvnadj1")
+#' gammacap(x, type = "mvnadj2")
 #' gammacap(x, type = "nb")
 #' gammacap(sigmacap = cov(x), type = "mvn")
 #' @export
@@ -73,6 +90,8 @@ gammacap <- function(x,
                      unbiased = TRUE,
                      bcap = 5000L,
                      seed = NULL,
+                     missing = FALSE,
+                     ml_cov = TRUE,
                      names = TRUE,
                      sep = ".") {
   # gammaR
@@ -97,10 +116,22 @@ gammacap <- function(x,
         )
       )
     },
-    mvnadj = {
+    mvnadj1 = {
       return(
-        gammacap_mvnadj(
+        gammacap_mvnadj1(
           x = x,
+          names = names,
+          sep = sep
+        )
+      )
+    },
+    mvnadj2 = {
+      return(
+        gammacap_mvnadj2(
+          x = x,
+          missing = FALSE,
+          ml_cov = ml_cov,
+          drop_means = TRUE, # only elements for the covariances for uniformity
           names = names,
           sep = sep
         )

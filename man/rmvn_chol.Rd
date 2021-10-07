@@ -54,6 +54,17 @@ rmvn_chol(
   sigmacap = sigmacap
 )
 }
+\seealso{
+Other Multivariate Normal Distribution Functions: 
+\code{\link{grad_l_mvn_generic}()},
+\code{\link{grad_l_mvn}()},
+\code{\link{hess_l_mvn_generic}()},
+\code{\link{hess_l_mvn}()},
+\code{\link{l_mvn_generic}()},
+\code{\link{l_mvn}()},
+\code{\link{negl_mvn}()},
+\code{\link{theta_helper}()}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

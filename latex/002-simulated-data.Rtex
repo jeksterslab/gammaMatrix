@@ -80,12 +80,35 @@ gammacap(
 
 \section{Normally Distributed Data with Adjustment for Nonnormality}
 
+\subsection{Variant 1}
+
 <<>>=
-gammacap_mvnadj(x_i)
+gammacap_mvnadj1(x_i)
 gammacap(
   x_i,
-  type = "mvnadj"
+  type = "mvnadj1"
 )
+@
+
+\subsection{Variant 2}
+
+<<>>=
+gammacap_mvnadj2(x_i)
+gammacap_mvnadj2(
+  x_i,
+  ml_cov = TRUE,
+  drop_means = FALSE
+)
+gammacap(
+  x_i,
+  type = "mvnadj2"
+)
+hess <- hess_l_mvn_generic(
+  x = x_i[3, ],
+  mu = colMeans(x_i),
+  sigmacap = cov(x_i) * (dim(x_i)[1] - 1) / dim(x_i)[1]
+)
+solve(-1 * hess)
 @
 
 \section{Asymptotic Distribution-Free}

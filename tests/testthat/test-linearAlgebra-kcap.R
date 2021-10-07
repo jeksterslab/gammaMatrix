@@ -10,7 +10,7 @@ x_i <- matrix(
 m_i <- dim(x_i)[1]
 answer_i <- c(1.0, 0.5, 0.4, 1.0, 0.6, 1.0)
 result_i <- c(kcap(m_i) %*% as.vector(x_i))
-testthat::test_that("linearAlgebra-kcap 3 by 3", {
+testthat::test_that("test-linearAlgebra-kcap 3 by 3", {
   testthat::expect_equal(
     result_i,
     answer_i
@@ -23,7 +23,7 @@ x_i <- matrix(
 m_i <- dim(x_i)[1]
 answer_i <- c(1, 2, 3)
 result_i <- c(kcap(m_i) %*% as.vector(x_i))
-testthat::test_that("linearAlgebra-kcap 2 by 2", {
+testthat::test_that("test-linearAlgebra-kcap 2 by 2", {
   testthat::expect_equal(
     result_i,
     answer_i
@@ -67,7 +67,7 @@ x_i <- cov(x_i)
 m_i <- dim(x_i)[1]
 answer_i <- vech(t(x_i), names = FALSE)
 result_i <- c(kcap(m_i) %*% as.vector(x_i))
-testthat::test_that("linearAlgebra-kcap random cov", {
+testthat::test_that("test-linearAlgebra-kcap random cov", {
   testthat::expect_equal(
     result_i,
     answer_i

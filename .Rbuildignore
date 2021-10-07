@@ -12,6 +12,10 @@
 ^LICENSE\.md$
 ^Makefile$
 ^\.Rproj\.user$
+^\.bash_aliases$
+^\.bash_profile$
+^\.bash_secrets$
+^\.bashrc$
 ^\.covrignore$
 ^\.git$
 ^\.github$
@@ -19,6 +23,7 @@
 ^\.library$
 ^\.notes$
 ^\.references$
+^\.vimrc$
 ^data_raw$
 ^docs$
 ^latex$

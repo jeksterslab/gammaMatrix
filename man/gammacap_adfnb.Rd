@@ -72,7 +72,8 @@ doi:\href{https://doi.org/10.1111/j.2044-8317.1994.tb01025.x}{10.1111/j.2044-831
 Other Gamma Matrix Functions: 
 \code{\link{gammacap_adf}()},
 \code{\link{gammacap_gen}()},
-\code{\link{gammacap_mvnadj}()},
+\code{\link{gammacap_mvnadj1}()},
+\code{\link{gammacap_mvnadj2}()},
 \code{\link{gammacap_mvn}()},
 \code{\link{gammacap_nb}()},
 \code{\link{gammacap_ols_generic}()},

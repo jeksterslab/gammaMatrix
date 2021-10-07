@@ -11,6 +11,8 @@ gammacap(
   unbiased = TRUE,
   bcap = 5000L,
   seed = NULL,
+  missing = FALSE,
+  ml_cov = TRUE,
   names = TRUE,
   sep = "."
 )
@@ -28,8 +30,10 @@ If \code{type = "gen"},
 calculate covariance matrix using the general formula.
 If \code{type = "mvn"},
 calculate covariance matrix with multivariate normal data.
-If \code{type = "mvnadj"},
-calculate covariance matrix with adjustment.
+If \code{type = "mvnadj1"},
+calculate covariance matrix with adjustment variant 1.
+If \code{type = "mvnadj2"},
+calculate covariance matrix with adjustment variant 2.
 If \code{type = "nb"},
 calculate covariance matrix from
 nonparametric bootstrapped
@@ -54,6 +58,21 @@ Number of bootstrap samples.}
 \item{seed}{Integer.
 The argument is used when \verb{type = "adfnb" or type = "nb"}.
 Random number generation seed.}
+
+\item{missing}{Logical.
+The argument is used when \code{type = "mvnadj2"}.
+If \code{missing = TRUE},
+the mean vector and the covariance matrix
+will be estimated using the EM algorithm.
+If \code{missing = FALSE},
+all missing values will be dropped
+and the mean vector and covariance matrix
+will be estimated using \code{x}.}
+
+\item{ml_cov}{Logical.
+The argument is used when \code{type = "mvnadj2"}.
+If \code{missing = FALSE} and \code{ml_cov = TRUE},
+use maximum likelihood estimator of the covariance matrix.}
 
 \item{names}{Logical.
 Add names.}
@@ -88,6 +107,8 @@ gammacap(x, type = "adf")
 gammacap(x, type = "adfnb")
 gammacap(x, type = "gen")
 gammacap(x, type = "mvn")
+gammacap(x, type = "mvnadj1")
+gammacap(x, type = "mvnadj2")
 gammacap(x, type = "nb")
 gammacap(sigmacap = cov(x), type = "mvn")
 }
@@ -96,7 +117,8 @@ Other Gamma Matrix Functions:
 \code{\link{gammacap_adfnb}()},
 \code{\link{gammacap_adf}()},
 \code{\link{gammacap_gen}()},
-\code{\link{gammacap_mvnadj}()},
+\code{\link{gammacap_mvnadj1}()},
+\code{\link{gammacap_mvnadj2}()},
 \code{\link{gammacap_mvn}()},
 \code{\link{gammacap_nb}()},
 \code{\link{gammacap_ols_generic}()},

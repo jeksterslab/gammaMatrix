@@ -99,6 +99,7 @@ gammacap_ols_generic <- function(x,
   dcap <- dcap(p)
   tdcap <- t(dcap)
   # gammacapx is equal to gamma11
+  # missingness is dealt with in gammacap
   gammacapx <- gammacap(
     x = x,
     type = type,

@@ -15,7 +15,7 @@ obj_i <- lm(
   y ~ x,
   data = x_i
 )
-testthat::test_that("test ols", {
+testthat::test_that("test-gammaMatrix-gammacap_ols", {
   testthat::expect_true(
     all(
       abs(

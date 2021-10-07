@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Asymptotic Covariance Matrix with Adjustment — gammacap_mvnadj • gammaMatrix</title>
+<title>Gradient Vector of the Multivariate Normal Distribution - Generic — grad_l_mvn • gammaMatrix</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,10 @@
 
 
 
-<meta property="og:title" content="Asymptotic Covariance Matrix with Adjustment — gammacap_mvnadj" />
-<meta property="og:description" content="Calculates the covariance matrix of the unique elements
-of the covariance matrix with adjustment for nonnormality." />
+<meta property="og:title" content="Gradient Vector of the Multivariate Normal Distribution - Generic — grad_l_mvn" />
+<meta property="og:description" content="Calculates gradient vector of the log of the likelihood function
+of the multivariate normal distribution
+for the ith observation." />
 
 
 
@@ -122,95 +123,105 @@ of the covariance matrix with adjustment for nonnormality." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Asymptotic Covariance Matrix with Adjustment</h1>
+    <h1>Gradient Vector of the Multivariate Normal Distribution - Generic</h1>
     
-    <div class="hidden name"><code>gammacap_mvnadj.Rd</code></div>
+    <div class="hidden name"><code>grad_l_mvn.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Calculates the covariance matrix of the unique elements
-of the covariance matrix with adjustment for nonnormality.</p>
+    <p>Calculates gradient vector of the log of the likelihood function
+of the multivariate normal distribution
+for the ith observation.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>gammacap_mvnadj</span><span class='op'>(</span><span class='va'>x</span>, names <span class='op'>=</span> <span class='cn'>TRUE</span>, sep <span class='op'>=</span> <span class='st'>"."</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>grad_l_mvn</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>theta</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>Numeric matrix, data frame, or vector.</p></td>
+      <td><p>Numeric vector of length <code>k</code>.
+The ith vector of observations.</p></td>
     </tr>
     <tr>
-      <th>names</th>
-      <td><p>Logical.
-Add names.</p></td>
-    </tr>
-    <tr>
-      <th>sep</th>
-      <td><p>Character string.
-Separator for variable names.</p></td>
+      <th>theta</th>
+      <td><p>Numeric vector.
+Parameter vector
+\(
+    \boldsymbol{\theta}
+    =
+    \left\{
+    \boldsymbol{\mu},
+    \mathrm{vech}
+    \left(
+    \boldsymbol{\Sigma}
+    \right)
+    \right\}^{\prime}
+\)</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A matrix.</p>
-    <h2 class="hasAnchor" id="dependencies"><a class="anchor" href="#dependencies"></a>Dependencies</h2>
-
-    
-<ul>
-<li><p><code><a href='rmvn_chol.html'>rmvn_chol()</a></code> (test)</p></li>
-</ul>
-
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
-
-    <p>Yuan, K.-H., &amp; Hayashi, K. (2006).
-Standard errors in covariance structure models:
-Asymptotics versus bootstrap.
-British Journal of Mathematical and Statistical Psychology,
-59, 397–417.
-doi:<a href='https://doi.org/10.1348/000711005X85896'>10.1348/000711005X85896</a>.</p>
+    <p>A vector.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other Gamma Matrix Functions: 
-<code><a href='gammacap_adfnb.html'>gammacap_adfnb</a>()</code>,
-<code><a href='gammacap_adf.html'>gammacap_adf</a>()</code>,
-<code><a href='gammacap_gen.html'>gammacap_gen</a>()</code>,
-<code><a href='gammacap_mvn.html'>gammacap_mvn</a>()</code>,
-<code><a href='gammacap_nb.html'>gammacap_nb</a>()</code>,
-<code><a href='gammacap_ols_generic.html'>gammacap_ols_generic</a>()</code>,
-<code><a href='gammacap_ols_hc_generic.html'>gammacap_ols_hc_generic</a>()</code>,
-<code><a href='gammacap_ols_hc_qcap_generic.html'>gammacap_ols_hc_qcap_generic</a>()</code>,
-<code><a href='gammacap_ols_hc_qcap.html'>gammacap_ols_hc_qcap</a>()</code>,
-<code><a href='gammacap_ols_hc.html'>gammacap_ols_hc</a>()</code>,
-<code><a href='gammacap_ols.html'>gammacap_ols</a>()</code>,
-<code><a href='gammacapnames.html'>gammacapnames</a>()</code>,
-<code><a href='gammacap.html'>gammacap</a>()</code></p></div>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
-    <p>Ivan Jacob Agaloos Pesigan</p>
+    <div class='dont-index'><p>Other Multivariate Normal Distribution Functions: 
+<code><a href='grad_l_mvn_generic.html'>grad_l_mvn_generic</a>()</code>,
+<code><a href='hess_l_mvn_generic.html'>hess_l_mvn_generic</a>()</code>,
+<code><a href='hess_l_mvn.html'>hess_l_mvn</a>()</code>,
+<code><a href='l_mvn_generic.html'>l_mvn_generic</a>()</code>,
+<code><a href='l_mvn.html'>l_mvn</a>()</code>,
+<code><a href='negl_mvn.html'>negl_mvn</a>()</code>,
+<code><a href='rmvn_chol.html'>rmvn_chol</a>()</code>,
+<code><a href='theta_helper.html'>theta_helper</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>42</span><span class='op'>)</span>
-<span class='va'>n</span> <span class='op'>&lt;-</span> <span class='fl'>1000</span>
-<span class='va'>k</span> <span class='op'>&lt;-</span> <span class='fl'>2</span>
-<span class='va'>z</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>
-  data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='va'>n</span> <span class='op'>*</span> <span class='va'>k</span><span class='op'>)</span>, nrow <span class='op'>=</span> <span class='va'>n</span>, ncol <span class='op'>=</span> <span class='va'>k</span>
+    <pre class="examples"><div class='input'><span class='va'>n</span> <span class='op'>&lt;-</span> <span class='fl'>5</span>
+<span class='va'>mu</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>
+<span class='va'>sigmacap</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>
+  data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>
+    <span class='fl'>1</span>, <span class='fl'>0.5</span>, <span class='fl'>0.5</span>, <span class='fl'>1</span>
+  <span class='op'>)</span>,
+  nrow <span class='op'>=</span> <span class='fl'>2</span>
 <span class='op'>)</span>
-<span class='va'>q</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/chol.html'>chol</a></span><span class='op'>(</span>
-  <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>
-    data <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1.0</span>, <span class='fl'>0.5</span>, <span class='fl'>0.5</span>, <span class='fl'>1.0</span><span class='op'>)</span>,
-    nrow <span class='op'>=</span> <span class='va'>k</span>, ncol <span class='op'>=</span> <span class='va'>k</span>
+
+<span class='va'>xcap</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/t.html'>t</a></span><span class='op'>(</span>
+    <span class='fu'><a href='rmvn_chol.html'>rmvn_chol</a></span><span class='op'>(</span>
+      n <span class='op'>=</span> <span class='va'>n</span>,
+      mu <span class='op'>=</span> <span class='va'>mu</span>,
+      sigmacap <span class='op'>=</span> <span class='va'>sigmacap</span>
+    <span class='op'>)</span>
   <span class='op'>)</span>
 <span class='op'>)</span>
-<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='va'>z</span> <span class='op'>%*%</span> <span class='va'>q</span>
 
-<span class='fu'>gammacap_mvnadj</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;          v1.v1    v1.v2    v2.v2
-#&gt; v1.v1 2.152125 1.196660 0.708878
-#&gt; v1.v2 1.196660 1.440258 1.196320
-#&gt; v2.v2 0.708878 1.196320 2.109935</div></pre>
+<span class='va'>theta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>
+  <span class='va'>mu</span>,
+  <span class='fu'><a href='vech.html'>vech</a></span><span class='op'>(</span><span class='va'>sigmacap</span><span class='op'>)</span>
+<span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span><span class='op'>(</span>
+  X <span class='op'>=</span> <span class='va'>xcap</span>,
+  FUN <span class='op'>=</span> <span class='va'>grad_l_mvn</span>,
+  theta <span class='op'>=</span> <span class='va'>theta</span>
+<span class='op'>)</span>
+</div><div class='output co'>#&gt; $V1
+#&gt; [1]  0.03936127  0.42243360 -0.66589201  0.68329419 -0.57744159
+#&gt; 
+#&gt; $V2
+#&gt; [1] -0.1900495 -0.1757492 -0.6486073  0.7000677 -0.6512228
+#&gt; 
+#&gt; $V3
+#&gt; [1] -1.3009063 -0.8476588  0.1795120  1.7693914 -0.3074039
+#&gt; 
+#&gt; $V4
+#&gt; [1] -1.5552332 -0.9029436  0.5427084  2.0709544 -0.2590131
+#&gt; 
+#&gt; $V5
+#&gt; [1] -1.6102557  0.6368948  0.6297951 -0.3588967 -0.4638492
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

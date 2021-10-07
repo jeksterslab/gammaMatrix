@@ -141,6 +141,8 @@ of the covariance matrix.</p>
   unbiased <span class='op'>=</span> <span class='cn'>TRUE</span>,
   bcap <span class='op'>=</span> <span class='fl'>5000L</span>,
   seed <span class='op'>=</span> <span class='cn'>NULL</span>,
+  missing <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  ml_cov <span class='op'>=</span> <span class='cn'>TRUE</span>,
   names <span class='op'>=</span> <span class='cn'>TRUE</span>,
   sep <span class='op'>=</span> <span class='st'>"."</span>
 <span class='op'>)</span></pre>
@@ -164,8 +166,10 @@ If <code>type = "gen"</code>,
 calculate covariance matrix using the general formula.
 If <code>type = "mvn"</code>,
 calculate covariance matrix with multivariate normal data.
-If <code>type = "mvnadj"</code>,
-calculate covariance matrix with adjustment.
+If <code>type = "mvnadj1"</code>,
+calculate covariance matrix with adjustment variant 1.
+If <code>type = "mvnadj2"</code>,
+calculate covariance matrix with adjustment variant 2.
 If <code>type = "nb"</code>,
 calculate covariance matrix from
 nonparametric bootstrapped
@@ -200,6 +204,25 @@ The argument is used when <code>type = "adfnb" or type = "nb"</code>.
 Random number generation seed.</p></td>
     </tr>
     <tr>
+      <th>missing</th>
+      <td><p>Logical.
+The argument is used when <code>type = "mvnadj2"</code>.
+If <code>missing = TRUE</code>,
+the mean vector and the covariance matrix
+will be estimated using the EM algorithm.
+If <code>missing = FALSE</code>,
+all missing values will be dropped
+and the mean vector and covariance matrix
+will be estimated using <code>x</code>.</p></td>
+    </tr>
+    <tr>
+      <th>ml_cov</th>
+      <td><p>Logical.
+The argument is used when <code>type = "mvnadj2"</code>.
+If <code>missing = FALSE</code> and <code>ml_cov = TRUE</code>,
+use maximum likelihood estimator of the covariance matrix.</p></td>
+    </tr>
+    <tr>
       <th>names</th>
       <td><p>Logical.
 Add names.</p></td>
@@ -220,7 +243,8 @@ Separator for variable names.</p></td>
 <code><a href='gammacap_adfnb.html'>gammacap_adfnb</a>()</code>,
 <code><a href='gammacap_adf.html'>gammacap_adf</a>()</code>,
 <code><a href='gammacap_gen.html'>gammacap_gen</a>()</code>,
-<code><a href='gammacap_mvnadj.html'>gammacap_mvnadj</a>()</code>,
+<code><a href='gammacap_mvnadj1.html'>gammacap_mvnadj1</a>()</code>,
+<code><a href='gammacap_mvnadj2.html'>gammacap_mvnadj2</a>()</code>,
 <code><a href='gammacap_mvn.html'>gammacap_mvn</a>()</code>,
 <code><a href='gammacap_nb.html'>gammacap_nb</a>()</code>,
 <code><a href='gammacap_ols_generic.html'>gammacap_ols_generic</a>()</code>,
@@ -265,7 +289,15 @@ Separator for variable names.</p></td>
 </div><div class='output co'>#&gt;           v1.v1    v1.v2     v2.v2
 #&gt; v1.v1 2.0202463 1.027301 0.5223851
 #&gt; v1.v2 1.0273006 1.255231 1.0109425
-#&gt; v2.v2 0.5223851 1.010942 1.9564201</div><div class='input'><span class='fu'>gammacap</span><span class='op'>(</span><span class='va'>x</span>, type <span class='op'>=</span> <span class='st'>"nb"</span><span class='op'>)</span>
+#&gt; v2.v2 0.5223851 1.010942 1.9564201</div><div class='input'><span class='fu'>gammacap</span><span class='op'>(</span><span class='va'>x</span>, type <span class='op'>=</span> <span class='st'>"mvnadj1"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;          v1.v1    v1.v2    v2.v2
+#&gt; v1.v1 2.152125 1.196660 0.708878
+#&gt; v1.v2 1.196660 1.440258 1.196320
+#&gt; v2.v2 0.708878 1.196320 2.109935</div><div class='input'><span class='fu'>gammacap</span><span class='op'>(</span><span class='va'>x</span>, type <span class='op'>=</span> <span class='st'>"mvnadj2"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;          v1.v1    v1.v2    v2.v2
+#&gt; v1.v1 2.152124 1.196660 0.708877
+#&gt; v1.v2 1.196660 1.440258 1.196319
+#&gt; v2.v2 0.708877 1.196319 2.109934</div><div class='input'><span class='fu'>gammacap</span><span class='op'>(</span><span class='va'>x</span>, type <span class='op'>=</span> <span class='st'>"nb"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;           v1.v1    v1.v2     v2.v2
 #&gt; v1.v1 2.1333820 1.167641 0.7301954
 #&gt; v1.v2 1.1676413 1.424857 1.2299521

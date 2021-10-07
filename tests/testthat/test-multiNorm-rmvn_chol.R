@@ -6,7 +6,7 @@ data_i <- rmvn_chol(
   mu = rep(x = 0, times = k_i),
   sigmacap = toeplitz((k_i:1) / k_i)
 )
-testthat::test_that("multiNorm-rmvn_chol means", {
+testthat::test_that("test-multiNorm-rmvn_chol means", {
   testthat::expect_true(
     all(
       abs(
@@ -18,7 +18,7 @@ testthat::test_that("multiNorm-rmvn_chol means", {
     )
   )
 })
-testthat::test_that("multiNorm-rmvn_chol covariances", {
+testthat::test_that("test-multiNorm-rmvn_chol covariances", {
   testthat::expect_true(
     all(
       abs(

@@ -2,13 +2,6 @@
 
 \input{latex/preamble/preamble}
 
-\usepackage{hyperref}
-
-
-
-\usepackage[sortcites=true,sorting=nyt,backend=biber]{biblatex}
-\addbibresource{.references/bib.bib}
-
 \title{gammaMatrix: Asymptotic Covariance Matrix of Covariances}
 \author{Ivan Jacob Agaloos Pesigan}
 
@@ -100,16 +93,24 @@ This approach follow the following steps.
 
 \subsection{Multivariate Normal with Adjustments for Nonnormality}
 
-\input{latex/equations/gammaMatrix-gammacap_mvn_adj}
+\input{latex/equations/gammaMatrix-gammacap_mvn_adj1}
 
-\input{latex/equations/gammaMatrix-gammacap_mvn_adj-where}
+\input{latex/equations/gammaMatrix-gammacap_mvn_adj1-where}
 
 The estimator is given by
 
-\input{latex/equations/gammaMatrix-gammacap_mvn_adj-estimator}
+\input{latex/equations/gammaMatrix-gammacap_mvn_adj1-estimator}
 
-\input{latex/equations/gammaMatrix-gammacap_mvn_adj-estimator-where}
+\input{latex/equations/gammaMatrix-gammacap_mvn_adj1-estimator-where}
 
-\printbibliography
+The estimator is given by
+
+\input{latex/equations/gammaMatrix-gammacap_mvn_adj2-estimator}
+
+\input{latex/equations/gammaMatrix-gammacap_mvn_adj2-estimator-where}
+
+\section{SEM}
+
+\input{latex/equations/momentStr-mvn-adj1}
 
 \end{document}
