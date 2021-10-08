@@ -71,8 +71,8 @@ Other Multivariate Normal Distribution Functions:
 \code{\link{hess_l_mvn}()},
 \code{\link{l_mvn_generic}()},
 \code{\link{l_mvn}()},
-\code{\link{rmvn_chol}()},
-\code{\link{theta_helper}()}
+\code{\link{mvn_theta_helper}()},
+\code{\link{rmvn_chol}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

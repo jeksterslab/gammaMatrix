@@ -15,13 +15,13 @@
 #' @returns A list with elements `mu` and `sigmacap`.
 #'
 #' @examples
-#' theta_helper(
+#' mvn_theta_helper(
 #'   x = c(0, 0, 1, 0.5, 1)
 #' )
 #' @export
 #' @family Multivariate Normal Distribution Functions
 #' @keywords multiNorm
-theta_helper <- function(x) {
+mvn_theta_helper <- function(x) {
   stopifnot(is.vector(x))
   q <- length(x)
   k <- 0.5 * (sqrt(8 * q + 9) - 3)

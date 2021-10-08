@@ -76,6 +76,9 @@
     <loc>https://github.com/jeksterslab/gammaMatrix//reference/l_mvn_generic.html</loc>
   </url>
   <url>
+    <loc>https://github.com/jeksterslab/gammaMatrix//reference/mvn_theta_helper.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/jeksterslab/gammaMatrix//reference/negl_mvn.html</loc>
   </url>
   <url>
@@ -83,9 +86,6 @@
   </url>
   <url>
     <loc>https://github.com/jeksterslab/gammaMatrix//reference/sym_of_vech.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/gammaMatrix//reference/theta_helper.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/gammaMatrix//reference/vech.html</loc>

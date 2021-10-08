@@ -59,7 +59,7 @@
 #' @keywords multiNorm
 l_mvn <- function(theta,
                   x) {
-  theta <- theta_helper(theta)
+  theta <- mvn_theta_helper(theta)
   return(
     l_mvn_generic(
       x = x,
