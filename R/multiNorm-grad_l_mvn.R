@@ -52,4 +52,3 @@ grad_l_mvn <- function(x,
     )
   )
 }
-

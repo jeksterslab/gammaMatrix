@@ -68,21 +68,3 @@ l_mvn <- function(theta,
     )
   )
 }
-
-# l_mvn2 <- function(theta,
-#                   x) {
-#  k <- length(x)
-#  mu <- theta[1:k]
-#  sigmacap <- matrix(
-#    theta[(k+1):length(theta)],
-#    nrow = k,
-#    ncol = k
-#  )
-#  return(
-#    l_mvn_generic(
-#      x = x,
-#      mu = mu,
-#      sigmacap = sigmacap
-#    )
-#  )
-# }
