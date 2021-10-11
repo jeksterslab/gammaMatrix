@@ -54,7 +54,7 @@
 #' @family Gamma Matrix Functions
 #' @keywords gammaMatrix
 gammacap_nb <- function(x,
-                        bcap = 5000L,
+                        bcap = 1000L,
                         seed = NULL,
                         names = TRUE,
                         sep = ".") {

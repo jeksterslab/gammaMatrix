@@ -4,7 +4,7 @@
 \alias{gammacap_nb}
 \title{Nonparametric Bootstrapped Covariance Matrix}
 \usage{
-gammacap_nb(x, bcap = 5000L, seed = NULL, names = TRUE, sep = ".")
+gammacap_nb(x, bcap = 1000L, seed = NULL, names = TRUE, sep = ".")
 }
 \arguments{
 \item{x}{Numeric matrix, data frame, or vector.}

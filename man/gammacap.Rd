@@ -9,7 +9,7 @@ gammacap(
   type = "mvn",
   sigmacap = NULL,
   unbiased = TRUE,
-  bcap = 5000L,
+  bcap = 1000L,
   seed = NULL,
   missing = FALSE,
   ml_cov = TRUE,

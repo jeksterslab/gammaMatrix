@@ -4,7 +4,7 @@
 \alias{gammacap_adfnb}
 \title{Nonparametric Bootstrapped Asymptotic Distribution-Free Covariance Matrix}
 \usage{
-gammacap_adfnb(x, bcap = 5000L, seed = NULL, names = TRUE, sep = ".")
+gammacap_adfnb(x, bcap = 1000L, seed = NULL, names = TRUE, sep = ".")
 }
 \arguments{
 \item{x}{Numeric matrix, data frame, or vector.}

@@ -1,7 +1,7 @@
 gammaMatrix: Asymptotic Covariance Matrix of Covariances
 ================
 Ivan Jacob Agaloos Pesigan
-2021-10-09
+2021-10-11
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->

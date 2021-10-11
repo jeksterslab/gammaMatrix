@@ -1,4 +1,5 @@
 ## ---- test-gammaMatrix-gammacap_adfnb-univariate
+set.seed(42)
 tol_i <- 0.5
 x_i <- as.vector(scale(rnorm(1000)))
 normal_i <- gammacap(x_i, type = "mvn")

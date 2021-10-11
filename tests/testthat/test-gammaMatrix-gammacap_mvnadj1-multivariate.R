@@ -1,4 +1,5 @@
 ## ---- test-gammaMatrix-gammacap_mvnadj1-multivariate
+set.seed(42)
 tol_i <- 0.5
 x_i <- rmvn_chol(
   n = 1000,

@@ -104,7 +104,7 @@
 gammacap_ols <- function(x,
                          type = "gen",
                          adf_unbiased = TRUE,
-                         bcap = 5000L,
+                         bcap = 1000L,
                          seed = NULL,
                          ke_unbiased = FALSE,
                          yc = FALSE,
